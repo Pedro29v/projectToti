@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">taskAppToti</string>
+    <string name="new_task">New Task</string>
 </resources>
