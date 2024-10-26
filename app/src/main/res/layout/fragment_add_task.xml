@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parent_layout"
+    android:background="@color/blue_dark"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/banner"
+        style="@style/banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@+id/parent_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/new_task"
+        android:drawableStart="@drawable/arrow_back"
+        android:drawablePadding="25dp"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/appCompatTextView"
+        style="@style/subTitle"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="25dp"
+        android:text="@string/what_is_the_new_task"
+        app:layout_constraintTop_toBottomOf="@+id/banner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/input_text"
+        style="@style/text_form"
+        android:hint="@string/hint_new_task"
+        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        style="@style/text_form"
+        app:layout_constraintTop_toBottomOf="@+id/input_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:spinnerMode="dropdown"
+        android:entries="@array/option_list"
+
+        />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
