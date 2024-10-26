@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">taskAppToti</string>
     <string name="new_task">New Task</string>
+    <string name="what_is_the_new_task">What is to be done?</string>
+    <string name="hint_new_task">Enter Task Here</string>
+
+    <string-array name="option_list">
+        <item>Default</item>
+        <item>Shopping</item>
+        <item>Personal</item>
+        <item>Work</item>
+    </string-array>
 </resources>
