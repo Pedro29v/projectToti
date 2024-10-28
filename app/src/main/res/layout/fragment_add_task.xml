@@ -20,7 +20,7 @@
         />
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/appCompatTextView"
+        android:id="@+id/subtitle1"
         style="@style/subTitle"
         android:layout_marginTop="30dp"
         android:layout_marginStart="25dp"
@@ -34,21 +34,39 @@
         android:id="@+id/input_text"
         style="@style/text_form"
         android:hint="@string/hint_new_task"
-        app:layout_constraintTop_toBottomOf="@+id/appCompatTextView"
+        app:layout_constraintTop_toBottomOf="@+id/subtitle1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
 
-    <androidx.appcompat.widget.AppCompatSpinner
-        style="@style/text_form"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/subtitle2"
+        style="@style/subTitle"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="25dp"
+        android:text="@string/task_description"
         app:layout_constraintTop_toBottomOf="@+id/input_text"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:spinnerMode="dropdown"
-        android:entries="@array/option_list"
-
         />
 
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/input_text2"
+        style="@style/text_form"
+        android:hint="@string/hint_task_description"
+        app:layout_constraintTop_toBottomOf="@+id/subtitle2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="create"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_text2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
