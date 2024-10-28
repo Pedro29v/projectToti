@@ -10,3 +10,106 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+import android.os.Bundle
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // Initialize header components
+        val allListsTextView: TextView = findViewById(R.id.tvAllLists)
+        val filterIcon: ImageView = findViewById(R.id.ivFilter)
+
+        // Initialize FloatingActionButton
+        val fabAddTask: FloatingActionButton = findViewById(R.id.fabAddTask)
+
+        // Set click listeners
+        filterIcon.setOnClickListener {
+            // TODO: Implement filter functionality
+        }
+
+        fabAddTask.setOnClickListener {
+            // TODO: Implement add task functionality
+        }
+    }
+}
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#004D80"> <!-- Dark blue background -->
+
+    <!-- Header with filter functionality -->
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#1E88E5"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvAllLists"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="All Lists"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/ivFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_search"
+            android:contentDescription="Filter"
+            android:tint="#FFFFFF" />
+    </LinearLayout>
+
+    <!-- Background area for tasks -->
+    <LinearLayout
+        android:id="@+id/taskContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_below="@id/header">
+
+        <!-- Display "Nothing to do" text if no tasks are available -->
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/ic_hammock"
+            android:contentDescription="Hammock icon"
+            android:tint="#FFFFFF" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nothing to do"
+            android:textSize="18sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+
+    <!-- "+" button at the bottom right corner -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddTask"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_add"
+        android:contentDescription="Add task"
+        android:backgroundTint="#1E88E5"
+        android:tint="#FFFFFF" />
+</RelativeLayout>
