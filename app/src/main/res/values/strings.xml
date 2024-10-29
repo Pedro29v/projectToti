@@ -1,4 +1,11 @@
 <resources>
+
+    <!--Home´s String-->
+    <string name="nothing_toDo">Nothing to do</string>
+    <string name="description_button_add">button to create a task</string>
+    <string name="icon_note">Note icon</string>
+
+    <!--New task´s String-->
     <string name="app_name">taskAppToti</string>
     <string name="new_task">New Task</string>
     <string name="what_is_the_new_task">Task Name</string>
