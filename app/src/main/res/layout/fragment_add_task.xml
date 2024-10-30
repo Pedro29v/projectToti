@@ -59,14 +59,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="create"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        style="@style/button"
+        android:id="@+id/fabAddTask"
+        android:contentDescription="@string/description_button_add"
+        android:src="@drawable/ic_check"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/input_text2" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

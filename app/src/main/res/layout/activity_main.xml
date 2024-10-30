@@ -8,6 +8,7 @@
 
     <!-- Header with filter functionality -->
     <LinearLayout
+
         android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -20,12 +21,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="All Lists"
-            android:textSize="20sp"
+            android:text="@string/all_list"
+            android:textSize="18sp"
             android:textColor="@color/white"
             android:textStyle="bold" />
-
-
     </LinearLayout>
 
     <!-- Background area for tasks -->
@@ -57,14 +56,12 @@
     <!-- "+" button at the bottom right corner -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddTask"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/button"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:layout_margin="16dp"
         android:src="@drawable/ic_add"
         android:contentDescription="@string/description_button_add"
-        android:backgroundTint="@color/light_blue"
+        android:backgroundTint="@color/white"
         android:tint="@color/white" />
 
 </RelativeLayout>

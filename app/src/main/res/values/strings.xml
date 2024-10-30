@@ -4,6 +4,7 @@
     <string name="nothing_toDo">Nothing to do</string>
     <string name="description_button_add">button to create a task</string>
     <string name="icon_note">Note icon</string>
+    <string name="all_list">All List</string>
 
     <!--New task´s String-->
     <string name="app_name">taskAppToti</string>
