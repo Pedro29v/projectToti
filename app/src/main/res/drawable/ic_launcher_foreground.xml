@@ -28,3 +28,40 @@
         android:strokeWidth="1"
         android:strokeColor="#00000000" />
 </vector>
+    <?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:padding="8dp">
+
+<TextView
+    android:id="@+id/taskTitle"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/deleteButton"
+    app:layout_constraintTop_toTopOf="parent"/>
+
+<TextView
+    android:id="@+id/taskDescription"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="4dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/taskTitle"/>
+
+<Button
+    android:id="@+id/deleteButton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Deletar"
+    android:background="?android:attr/selectableItemBackground"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

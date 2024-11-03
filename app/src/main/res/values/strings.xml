@@ -13,6 +13,7 @@
     <string name="hint_new_task">Enter Task Here</string>
     <string name="task_description">Description</string>
     <string name="hint_task_description">Enter Description Here</string>
+    <string name="title_activity_new">NewActivity</string>
 
 
 </resources>
