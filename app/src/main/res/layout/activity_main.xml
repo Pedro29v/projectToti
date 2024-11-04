@@ -5,7 +5,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/main"
     android:background="@color/dark_blue">
+
 
     <LinearLayout
         android:id="@+id/header"
@@ -39,7 +41,7 @@
         app:layout_constraintTop_toBottomOf="@id/header"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/fabAddTask">
+        app:layout_constraintBottom_toTopOf="@id/AddTaskButton">
 
         <!-- Display "Nothing to do" text if no tasks are available -->
         <ImageView
@@ -60,7 +62,7 @@
 
     <!-- "+" button at the bottom right corner -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabAddTask"
+        android:id="@+id/AddTaskButton"
         style="@style/button"
         android:src="@drawable/ic_add"
         android:contentDescription="@string/description_button_add"
