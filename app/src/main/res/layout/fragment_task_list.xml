@@ -3,13 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TaskListFragment">
+    tools:context=".TaskListFragment"
+    android:padding="16dp">
 
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_item"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="hello world"
-        android:gravity="center"/>
+        tools:listitem="@layout/cardview_task_list"
+        android:background="@color/dark_blue"
+        />
+
+
+<!--    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="HELLO WORLD "
+        android:gravity="center"
+        android:textColor="@color/white"/>-->
 
 </FrameLayout>
