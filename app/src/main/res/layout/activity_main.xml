@@ -3,11 +3,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/main"
     android:background="@color/dark_blue">
-
 
     <LinearLayout
         android:id="@+id/header"
@@ -32,19 +32,33 @@
     </LinearLayout>
 
     <!-- Background area for tasks -->
+
+    <!-- "+" button at the bottom right corner -->
     <LinearLayout
         android:id="@+id/taskContainer"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:orientation="vertical"
         android:gravity="center"
-        app:layout_constraintTop_toBottomOf="@id/header"
-        app:layout_constraintStart_toStartOf="parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/AddTaskButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/AddTaskButton">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintVertical_bias="0.0">
+
+        <!--Recyclerview-->
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentContainerView"
+            android:name="com.group3.taskapptoti.TaskListFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout="@layout/fragment_task_list"
+            />
 
         <!-- Display "Nothing to do" text if no tasks are available -->
-        <ImageView
+        <!--        <ImageView
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:contentDescription="@string/icon_note"
@@ -57,10 +71,9 @@
             android:text="@string/nothing_toDo"
             android:textSize="18sp"
             android:textColor="@color/white"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="8dp" />-->
     </LinearLayout>
 
-    <!-- "+" button at the bottom right corner -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/AddTaskButton"
         style="@style/button"

@@ -14,5 +14,11 @@
     <string name="task_description">Description</string>
     <string name="hint_task_description">Enter Description Here</string>
 
+    <!--Btn from task list-->
+
+    <string name="delete_btn_description">Button to delete task</string>
+    <string name="edit_btn_description">Button to edit task</string>
+
+
 
 </resources>
