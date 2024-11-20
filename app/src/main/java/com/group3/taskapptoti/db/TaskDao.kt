@@ -8,5 +8,5 @@ import com.group3.taskapptoti.model.Task
 interface TaskDao {
 
     @Insert
-    fun insertAll(vararg task: Task)
+    fun insertTask(task: Task)
 }
