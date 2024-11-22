@@ -10,4 +10,8 @@ interface TaskDao {
 
     @Insert
     fun insertTask(task: Task)
+
+    @Query("SELECT * FROM Task")
+    fun getAll():List<Task>
+
 }
