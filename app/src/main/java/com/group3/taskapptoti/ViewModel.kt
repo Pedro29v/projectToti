@@ -18,5 +18,11 @@ class ViewModel {
 
     }
 
+    fun getTask():List<TaskClass>{
+        return database.taskDao().getAll().map{
+            TaskClass(it.id,it.title,it.description)
+        }
+    }
+
 
 }
