@@ -57,21 +57,30 @@
             tools:layout="@layout/fragment_task_list"
             />
 
-        <!-- Display "Nothing to do" text if no tasks are available -->
-        <!--        <ImageView
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:contentDescription="@string/icon_note"
-            android:src="@drawable/ic_note"
-            app:tint="@color/white" />
+         <!--Display "Nothing to do" text if no tasks are available-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/nothing_toDo"
-            android:textSize="18sp"
-            android:textColor="@color/white"
-            android:layout_marginTop="8dp" />-->
+
+            <!--<ImageView
+                android:id="@+id/imgNothingToDo"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:contentDescription="@string/icon_note"
+                android:src="@drawable/ic_note"
+                app:tint="@color/white"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/txtNothingToDo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nothing_toDo"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"/>-->
+
+
+
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

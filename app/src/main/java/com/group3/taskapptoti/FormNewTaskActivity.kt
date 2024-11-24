@@ -14,7 +14,7 @@ import com.group3.taskapptoti.model.Task
 
 class FormNewTaskActivity : AppCompatActivity() {
 
-    private val viewModel = ViewModel()
+    private val viewModel = MainActivityViewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,7 +56,10 @@ class FormNewTaskActivity : AppCompatActivity() {
 
                     findViewById<EditText>(R.id.input_text).text.clear()
                     findViewById<EditText>(R.id.input_text2).text.clear()
+
+                    finish()
                 }
+
             } catch (e: Exception) {
                 Log.e("FormNewTaskActivity", "Error saving the task", e)
                 runOnUiThread {
