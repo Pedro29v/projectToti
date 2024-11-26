@@ -34,11 +34,13 @@ class MainActivityViewModel : ViewModel() {
 
     private fun loadTasks() {
         CoroutineScope(Dispatchers.IO).launch {
-            val taskList = database.taskDao().getAll().map {
-                TaskClass(it.id, it.title, it.description)
-            }
-            Log.d("MainActivityViewModel", "Tareas cargadas: $taskList")
-                _tasks.postValue(taskList)
+          database.taskDao().getAll().collect{list ->
+              val mappedList = list.map {
+                  TaskClass(it.id,it.title,it.description)
+              }
+              _tasks.postValue(mappedList)
+          }
+
         }
     }
 
