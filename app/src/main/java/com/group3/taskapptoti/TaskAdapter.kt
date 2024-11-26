@@ -6,13 +6,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class TaskAdapter(private val dataSet: List<Task>) :
+class TaskAdapter(private var dataSet: List<TaskClass>) :
     RecyclerView.Adapter<TaskViewHolder>() {
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): TaskViewHolder {
         val view = LayoutInflater.from(viewGroup.context)
             .inflate(R.layout.cardview_task_list, viewGroup, false)
-
         return TaskViewHolder(view)
     }
 
@@ -21,11 +20,18 @@ class TaskAdapter(private val dataSet: List<Task>) :
     override fun onBindViewHolder(viewHolder: TaskViewHolder, position: Int) {
         viewHolder.bind(dataSet[position])
     }
+
+    fun updateTasks(newDataSet: List<TaskClass>) {
+        dataSet = newDataSet
+        notifyDataSetChanged()
+    }
 }
 
 class TaskViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
-    fun bind(task: Task) {
+    fun bind(task: TaskClass) {
         view.findViewById<TextView>(R.id.title).text = task.title
         view.findViewById<TextView>(R.id.description).text = task.description
     }
+
+
 }
