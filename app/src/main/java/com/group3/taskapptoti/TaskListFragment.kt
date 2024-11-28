@@ -1,11 +1,11 @@
 package com.group3.taskapptoti
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -39,12 +39,14 @@ class TaskListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        adapter = TaskAdapter(emptyList())
+        adapter = TaskAdapter(emptyList()) { taskToDelete ->
+            viewModel.deleteTask(taskToDelete)
+            Toast.makeText(requireContext(), "Task deleted successfully", Toast.LENGTH_SHORT).show()
+        }
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = adapter
 
         viewModel.tasks.observe(viewLifecycleOwner) { tasks ->
-            Log.d("TaskListFragment", "Datos actualizados: $tasks")
             adapter.updateTasks(tasks)
         }
 

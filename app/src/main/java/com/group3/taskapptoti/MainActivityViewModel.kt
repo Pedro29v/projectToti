@@ -1,7 +1,6 @@
 package com.group3.taskapptoti
 
 import android.content.Context
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -44,11 +43,20 @@ class MainActivityViewModel : ViewModel() {
         }
     }
 
-/*    fun getTask():List<TaskClass>{
-        return database.taskDao().getAll().map{
-            TaskClass(it.id,it.title,it.description)
-        }
-    }*/
+    fun deleteTask(task: TaskClass) {
+        CoroutineScope(Dispatchers.IO).launch {
+            task.id?.let { id ->
 
+                val taskForDelete = Task(
+                    id = id,
+                    title = task.title,
+                    description = task.description
+                )
+                database.taskDao().delete(taskForDelete)
+
+                loadTasks()
+            }
+        }
+    }
 
 }
