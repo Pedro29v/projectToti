@@ -6,6 +6,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -40,7 +41,11 @@ class FormNewTaskActivity : AppCompatActivity() {
 
 
         if (title.isBlank() || description.isBlank()) {
-            Toast.makeText(this, "Please complete all fields", Toast.LENGTH_SHORT).show()
+            Snackbar.make(
+                findViewById(R.id.parent_layout),
+                "Please complete all fields",
+                Snackbar.LENGTH_SHORT
+            ).show()
             return
         }
 
@@ -52,7 +57,11 @@ class FormNewTaskActivity : AppCompatActivity() {
             try {
                 viewModel.addTask(task)
                 runOnUiThread {
-                    Toast.makeText(this@FormNewTaskActivity, "Task saved", Toast.LENGTH_SHORT).show()
+                    Snackbar.make(
+                        findViewById(R.id.parent_layout),
+                        "Task saved",
+                        Snackbar.LENGTH_LONG
+                    ).show()
 
                     findViewById<EditText>(R.id.input_text).text.clear()
                     findViewById<EditText>(R.id.input_text2).text.clear()
