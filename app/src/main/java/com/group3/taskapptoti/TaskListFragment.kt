@@ -5,10 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.snackbar.Snackbar
 
 
 class TaskListFragment : Fragment() {
@@ -30,8 +30,6 @@ class TaskListFragment : Fragment() {
         viewModel = ViewModelProvider(this)[MainActivityViewModel::class.java]
         viewModel.initializeDatabase(requireContext())
 
-
-
         return view
     }
 
@@ -40,8 +38,7 @@ class TaskListFragment : Fragment() {
 
 
         adapter = TaskAdapter(emptyList()) { taskToDelete ->
-            viewModel.deleteTask(taskToDelete)
-            Toast.makeText(requireContext(), "Task deleted successfully", Toast.LENGTH_SHORT).show()
+            showDeleteConfirmationDialog(taskToDelete)
         }
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = adapter
@@ -50,6 +47,24 @@ class TaskListFragment : Fragment() {
             adapter.updateTasks(tasks)
         }
 
+    }
+
+    private fun showDeleteConfirmationDialog(task: TaskClass) {
+        val builder = android.app.AlertDialog.Builder(requireContext())
+        builder.setTitle("Confirm Delete")
+        builder.setMessage("Are you sure you want to delete the task \"${task.title}\"?")
+
+        builder.setPositiveButton("Delete") { _, _ ->
+            viewModel.deleteTask(task)
+            Snackbar.make(requireView(), "Task eliminated", Snackbar.LENGTH_LONG).show()
+
+        }
+
+        builder.setNegativeButton("Cancel") { dialog, _ ->
+            dialog.dismiss()
+        }
+
+        builder.create().show()
     }
 }
 

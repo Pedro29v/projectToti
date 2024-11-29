@@ -38,6 +38,4 @@ class TaskViewHolder(private val view: View,private val onDeleteClick: (TaskClas
 
         }
     }
-
-
 }
