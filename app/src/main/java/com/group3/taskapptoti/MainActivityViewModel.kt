@@ -43,6 +43,26 @@ class MainActivityViewModel : ViewModel() {
         }
     }
 
+    /*aqui estoy trabajando*/
+    fun updateTask(task: TaskClass) {
+        CoroutineScope(Dispatchers.IO).launch {
+            task.id?.let {
+                val taskUpdate = Task(
+                    id = it,
+                    title = task.title,
+                    description = task.description
+                )
+                database.taskDao().update(taskUpdate)
+                loadTasks()
+            }
+        }
+    }
+    /*aqui estoy trabajando*/
+
+
+
+
+
     fun deleteTask(task: TaskClass) {
         CoroutineScope(Dispatchers.IO).launch {
             task.id?.let { id ->

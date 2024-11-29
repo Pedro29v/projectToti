@@ -1,5 +1,6 @@
 package com.group3.taskapptoti
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -37,9 +38,15 @@ class TaskListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        adapter = TaskAdapter(emptyList()) { taskToDelete ->
+        adapter = TaskAdapter(emptyList(), { taskToDelete ->
             showDeleteConfirmationDialog(taskToDelete)
-        }
+        },{taskToEdit ->
+            val intent = Intent(requireContext(), FormNewTaskActivity::class.java)
+            intent.putExtra("task_id", taskToEdit.id)
+            intent.putExtra("task_title", taskToEdit.title)
+            intent.putExtra("task_description", taskToEdit.description)
+            startActivity(intent)
+        })
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = adapter
 
